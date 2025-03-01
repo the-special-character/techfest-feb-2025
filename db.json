@@ -1,0 +1,19 @@
+{
+  "todoList": [
+    {
+      "todoItem": "Get Milk",
+      "isDone": false,
+      "id": 1
+    },
+    {
+      "todoItem": "Learn react",
+      "isDone": false,
+      "id": 2
+    },
+    {
+      "todoItem": "Learn flutter",
+      "isDone": false,
+      "id": 3
+    }
+  ]
+}
