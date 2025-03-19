@@ -1,42 +1,28 @@
-"use client"
-
 import React from "react";
+import { Label } from "../ui/label";
 import { Input } from "../ui/input";
-import { Button } from "../ui/button";
-import { useForm } from "react-hook-form";
-import { Form, FormControl,  FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
 import { addTodo } from "@/app/actions";
 
 const TodoForm = () => {
-  const form = useForm();
-
-  const onSubmit = (value) => addTodo(value)
-
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}  className="flex flex-row">
-        <FormField
-          control={form.control}
-          name="todoItem"
-          rules={{
-            required: {
-                message: "Todo Text is mendatory",
-                value: true
-            },
-          }}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="sr-only">Todo Text</FormLabel>
-              <FormControl>
-                <Input placeholder="Enter your todo Here.." className="rounded-r-none" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
+    <form className="*:not-first:mt-2 min-w-sm" action={addTodo}>
+      <Label htmlFor="todo-text" className="sr-only">
+        Input with end button
+      </Label>
+      <div className="flex rounded-md shadow-xs">
+        <Input
+          id="todo-text"
+          name="todoText"
+          className="-me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"
+          placeholder="Enter your todo here..."
+          type="text"
+          required
         />
-        <Button className="rounded-l-none">Add Todo</Button>
-      </form>
-    </Form>
+        <button className="border-input bg-background text-foreground hover:bg-accent hover:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 inline-flex items-center rounded-e-md border px-3 text-sm font-medium transition-[color,box-shadow] outline-none focus:z-10 focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50">
+          Add Todo
+        </button>
+      </div>
+    </form>
   );
 };
 

@@ -1,32 +1,25 @@
 import React from "react";
-import { ScrollArea } from "../ui/scroll-area";
-import { Checkbox } from "../ui/checkbox";
-import { Label } from "../ui/label";
-import { Button } from "../ui/button";
+import TodoItem from "./todoItem";
 
-const TodoList = async () => {
-  const res = await fetch("http://localhost:3000/todoList", {
-    next: { tags: ["todo"] },
+
+const TodoList = async ({ filter }) => {
+  let url = "http://localhost:3000/todoList"
+  if(filter) url += `?isDone=${filter === "completed"}`
+  const res = await fetch(url, {
+    next: { tags: ["abc"] },
   });
   const json = await res.json();
 
   return (
-    <ScrollArea className="w-full flex-1">
+    <ul className="flex flex-col gap-4">
       {json.map((item) => {
         return (
-          <div key={item.id} className="flex items-center gap-4 m-4">
-            <div className="flex items-center gap-2">
-              <Checkbox id="todo-isdone" />
-              <Label htmlFor="todo-isdone" className="sr-only">
-                Toggle Complete Todo
-              </Label>
-            </div>
-            <p className="flex-1">{item.todoItem}</p>
-            <Button>Delete</Button>
-          </div>
+          <TodoItem key={item.id} item={item}>
+            {item.todoItem}
+            </TodoItem>
         );
       })}
-    </ScrollArea>
+    </ul>
   );
 };
 

@@ -1,13 +1,17 @@
-import React from "react";
-import { Button } from "../ui/button";
+import TodoFilterButton from "./todoFilterButton";
 
-const TodoFilter = () => {
+
+const TodoFilter = ({ filter }) => {
   return (
-    <div className="w-full flex">
-      <Button className="flex-1 rounded-none">All</Button>
-      <Button className="flex-1 rounded-none">Pending</Button>
-      <Button className="flex-1 rounded-none">Completed</Button>
-    </div>
+    <footer className="w-full flex">
+      <TodoFilterButton filter={filter}>All</TodoFilterButton>
+      <TodoFilterButton filter={filter} type="pedning">
+        Pending
+      </TodoFilterButton>
+      <TodoFilterButton filter={filter} type="completed">
+        Completed
+      </TodoFilterButton>
+    </footer>
   );
 };
 
