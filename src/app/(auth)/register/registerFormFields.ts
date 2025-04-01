@@ -1,4 +1,6 @@
+import FormFieldArray from "@/components/form/formFieldArray";
 import FormInput from "@/components/form/formInput";
+import FormMultiSlider from "@/components/form/formMultiSlider";
 import FormRadioGroup from "@/components/form/formRadioGroup";
 import FormSelect from "@/components/form/formSelect";
 
@@ -14,7 +16,7 @@ const loginFormFields = [
         message: "Name is mendetory",
       },
     },
-    className: "col-span-2"
+    className: "col-span-2",
   },
   {
     component: FormInput,
@@ -47,18 +49,18 @@ const loginFormFields = [
   },
   {
     component: FormSelect,
-    name: "age",
-    label: "Age",
+    name: "gender",
+    label: "Gender",
     placeholder: "Please Select Age",
     options: [
       {
         value: "male",
-        text: "Male"
+        text: "Male",
       },
       {
         value: "female",
-        text: "Female"
-      }
+        text: "Female",
+      },
     ],
     rules: {
       required: {
@@ -66,7 +68,16 @@ const loginFormFields = [
         message: "Age is mendetory",
       },
     },
-    className: "col-span-full"
+    className: "col-span-full",
+  },
+  {
+    component: FormMultiSlider,
+    name: "age",
+    label: "Age",
+    defaultValue:[25,50],
+    max:100,
+    min: 0,
+    step:1
   },
   {
     component: FormRadioGroup,
@@ -75,12 +86,12 @@ const loginFormFields = [
     options: [
       {
         value: "married",
-        text: "Married"
+        text: "Married",
       },
       {
         value: "unmarried",
-        text: "Unmarried"
-      }
+        text: "Unmarried",
+      },
     ],
     rules: {
       required: {
@@ -88,7 +99,52 @@ const loginFormFields = [
         message: "Status is mendetory",
       },
     },
-    className: "col-span-full"
+    className: "col-span-full",
+  },
+  {
+    component: FormFieldArray,
+    name: "productItems",
+    fieldArray: [
+      {
+        component: FormInput,
+        name: "itemName",
+        label: "Item Name",
+        placeholder: "Item Name",
+        rules: {
+          required: {
+            value: true,
+            message: "Item Name is mendetory",
+          },
+        },
+        className: "w-full",
+      },
+      {
+        component: FormInput,
+        name: "quantity",
+        label: "Qty",
+        placeholder: "Quantity",
+        rules: {
+          required: {
+            value: true,
+            message: "Quantity is mendetory",
+          },
+        },
+        className: "w-full",
+      },
+      {
+        component: FormInput,
+        name: "price",
+        label: "Price",
+        placeholder: "Price",
+        rules: {
+          required: {
+            value: true,
+            message: "Price is mendetory",
+          },
+        },
+        className: "w-full",
+      },
+    ],
   },
 ];
 
