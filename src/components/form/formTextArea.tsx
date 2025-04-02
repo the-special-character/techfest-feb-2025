@@ -17,6 +17,7 @@ const FormTextArea = ({
   rules,
   label,
   className,
+  hideMessage,
   ...props
 }: Props) => {
   return (
@@ -30,7 +31,7 @@ const FormTextArea = ({
           <FormControl>
             <Textarea {...field} {...props} />
           </FormControl>
-          <FormMessage />
+          {!hideMessage && <FormMessage />}
         </FormItem>
       )}
     />

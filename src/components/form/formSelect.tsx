@@ -22,7 +22,8 @@ const FormSelect = ({
   label,
   placeholder,
   options,
-  className
+  className,
+  hideMessage
 }: Props) => {
   return (
     <FormField
@@ -46,7 +47,7 @@ const FormSelect = ({
               ))}
             </SelectContent>
           </Select>
-          <FormMessage />
+          {!hideMessage && <FormMessage />}
         </FormItem>
       )}
     />

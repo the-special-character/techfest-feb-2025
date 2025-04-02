@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 type Props = {};
 
-const FormFieldArray = ({ control, name, fieldArray, className }: Props) => {
+const FormFieldArray = ({ control, name, fieldArray, className, hideMessage }: Props) => {
   const { fields, append, remove } = useFieldArray({
     control,
     name: name,
@@ -17,7 +17,7 @@ const FormFieldArray = ({ control, name, fieldArray, className }: Props) => {
       {fields.map((item, index) => (
         <li key={item.id} className="flex items-end gap-4">
           {fieldArray.map(({ component: Component, name: itemName, ...item }) => {
-            return <Component key={item.name} control={control} name={`${name}.${index}.${itemName}`} {...item} />;
+            return <Component key={item.name} control={control} name={`${name}.${index}.${itemName}`} hideMessage={hideMessage} {...item} />;
           })}
           <Button size="icon" type="button" onClick={() => remove(index)}>
             <TrashIcon />

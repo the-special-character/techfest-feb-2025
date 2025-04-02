@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 type Props = {};
 
-const FormInput = ({ control, name, rules, label, className, ...props }: Props) => {
+const FormInput = ({ control, name, rules, label, className, hideMessage, ...props }: Props) => {
   return (
     <FormField
       control={control}
@@ -17,7 +17,7 @@ const FormInput = ({ control, name, rules, label, className, ...props }: Props) 
           <FormControl>
             <Input {...field} {...props} />
           </FormControl>
-          <FormMessage />
+          {!hideMessage && <FormMessage />}
         </FormItem>
       )}
     />

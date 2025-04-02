@@ -21,6 +21,7 @@ const FormDatePicker = ({
   rules,
   label,
   className,
+  hideMessage,
   ...props
 }: Props) => {
   return (
@@ -62,7 +63,7 @@ const FormDatePicker = ({
               />
             </PopoverContent>
           </Popover>
-          <FormMessage />
+          {!hideMessage && <FormMessage />}
         </FormItem>
       )}
     />

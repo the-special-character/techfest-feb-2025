@@ -16,6 +16,7 @@ const FormRadioGroup = ({
   label,
   options,
   className,
+  hideMessage,
 }: Props) => {
   return (
     <FormField
@@ -44,7 +45,7 @@ const FormRadioGroup = ({
               ))}
             </RadioGroup>
           </FormControl>
-          <FormMessage />
+          {!hideMessage && <FormMessage />}
         </FormItem>
       )}
     />

@@ -132,7 +132,7 @@ const Invoices = () => {
                   done.
                 </SheetDescription>
               </SheetHeader>
-              <ScrollArea className="h-[80%]">
+              <ScrollArea className="h-[75%]">
                 <DynamicForm
                   form={form}
                   onSubmit={onSubmit}

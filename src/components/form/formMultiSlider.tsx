@@ -17,6 +17,7 @@ const FormMultiSlider = ({
   rules,
   label,
   className,
+  hideMessage,
   ...props
 }: Props) => {
   return (
@@ -41,7 +42,7 @@ const FormMultiSlider = ({
               {...props}
             />
           </FormControl>
-          <FormMessage />
+          {!hideMessage && <FormMessage />}
         </FormItem>
       )}
     />

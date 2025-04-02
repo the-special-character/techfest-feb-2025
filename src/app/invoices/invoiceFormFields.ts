@@ -1,139 +1,159 @@
 import FormDatePicker from "@/components/form/formDatePicker";
 import FormFieldArray from "@/components/form/formFieldArray";
+import FormGroup from "@/components/form/formGroup";
 import FormInput from "@/components/form/formInput";
 import FormSelect from "@/components/form/formSelect";
 import FormTextArea from "@/components/form/formTextArea";
 
 const invoiceFormFields = [
   {
-    component: FormInput,
-    name: "billFrom.streetAddress",
-    label: "Street Address",
-    placeholder: "Street Address",
-    rules: {
-      required: {
-        value: true,
-        message: "Street Address is mendetory",
+    component: FormGroup,
+    name: "billFrom",
+    legend: "Bill From",
+    className: "grid-cols-12",
+    hideMessage: true,
+    fieldArray: [
+      {
+        component: FormInput,
+        name: "streetAddress",
+        label: "Street Address",
+        placeholder: "Street Address",
+        rules: {
+          required: {
+            value: true,
+            message: "Street Address is mendetory",
+          },
+        },
+
+        className: "col-span-full",
       },
-    },
-    className: "col-span-full",
+      {
+        component: FormInput,
+        name: "city",
+        label: "City",
+        placeholder: "City",
+        rules: {
+          required: {
+            value: true,
+            message: "City is mendetory",
+          },
+        },
+        className: "col-span-4",
+      },
+      {
+        component: FormInput,
+        name: "postalCode",
+        label: "Postal Code",
+        placeholder: "Postal Code",
+        rules: {
+          required: {
+            value: true,
+            message: "Postal Code is mendetory",
+          },
+        },
+        className: "col-span-4",
+      },
+      {
+        component: FormInput,
+        name: "country",
+        label: "Country",
+        placeholder: "Country",
+        rules: {
+          required: {
+            value: true,
+            message: "Country is mendetory",
+          },
+        },
+        className: "col-span-4",
+      },
+    ],
   },
   {
-    component: FormInput,
-    name: "billFrom.city",
-    label: "City",
-    placeholder: "City",
-    rules: {
-      required: {
-        value: true,
-        message: "City is mendetory",
+    component: FormGroup,
+    name: "billTo",
+    legend: "Bill To",
+    className: "grid-cols-12",
+    hideMessage: true,
+    fieldArray: [
+      {
+        component: FormInput,
+        name: "clientName",
+        label: "Client's Name",
+        placeholder: "Client's Name",
+        rules: {
+          required: {
+            value: true,
+            message: "Client's Name is mendetory",
+          },
+        },
+        className: "col-span-full",
       },
-    },
-    className: "col-span-4",
-  },
-  {
-    component: FormInput,
-    name: "billFrom.postalCode",
-    label: "Postal Code",
-    placeholder: "Postal Code",
-    rules: {
-      required: {
-        value: true,
-        message: "Postal Code is mendetory",
+      {
+        component: FormInput,
+        name: "clientEmail",
+        label: "Client's Email",
+        placeholder: "Client's Email",
+        rules: {
+          required: {
+            value: true,
+            message: "Client's Email is mendetory",
+          },
+        },
+        className: "col-span-full",
       },
-    },
-    className: "col-span-4",
-  },
-  {
-    component: FormInput,
-    name: "billFrom.country",
-    label: "Country",
-    placeholder: "Country",
-    rules: {
-      required: {
-        value: true,
-        message: "Country is mendetory",
+      {
+        component: FormInput,
+        name: "streetAddress",
+        label: "Street Address",
+        placeholder: "Street Address",
+        rules: {
+          required: {
+            value: true,
+            message: "Street Address is mendetory",
+          },
+        },
+        className: "col-span-full",
       },
-    },
-    className: "col-span-4",
-  },
-  {
-    component: FormInput,
-    name: "billTo.clientName",
-    label: "Client's Name",
-    placeholder: "Client's Name",
-    rules: {
-      required: {
-        value: true,
-        message: "Client's Name is mendetory",
+      {
+        component: FormInput,
+        name: "city",
+        label: "City",
+        placeholder: "City",
+        rules: {
+          required: {
+            value: true,
+            message: "City is mendetory",
+          },
+        },
+        className: "col-span-4",
       },
-    },
-    className: "col-span-full",
-  },
-  {
-    component: FormInput,
-    name: "billTo.clientEmail",
-    label: "Client's Email",
-    placeholder: "Client's Email",
-    rules: {
-      required: {
-        value: true,
-        message: "Client's Email is mendetory",
+      {
+        component: FormInput,
+        name: "postalCode",
+        label: "Postal Code",
+        placeholder: "Postal Code",
+        rules: {
+          required: {
+            value: true,
+            message: "Postal Code is mendetory",
+          },
+        },
+        className: "col-span-4",
       },
-    },
-    className: "col-span-full",
-  },
-  {
-    component: FormInput,
-    name: "billTo.streetAddress",
-    label: "Street Address",
-    placeholder: "Street Address",
-    rules: {
-      required: {
-        value: true,
-        message: "Street Address is mendetory",
+      {
+        component: FormInput,
+        name: "country",
+        label: "Country",
+        placeholder: "Country",
+        rules: {
+          required: {
+            value: true,
+            message: "Country is mendetory",
+          },
+        },
+        className: "col-span-4",
       },
-    },
-    className: "col-span-full",
-  },
-  {
-    component: FormInput,
-    name: "billTo.city",
-    label: "City",
-    placeholder: "City",
-    rules: {
-      required: {
-        value: true,
-        message: "City is mendetory",
-      },
-    },
-    className: "col-span-4",
-  },
-  {
-    component: FormInput,
-    name: "billTo.postalCode",
-    label: "Postal Code",
-    placeholder: "Postal Code",
-    rules: {
-      required: {
-        value: true,
-        message: "Postal Code is mendetory",
-      },
-    },
-    className: "col-span-4",
-  },
-  {
-    component: FormInput,
-    name: "billTo.country",
-    label: "Country",
-    placeholder: "Country",
-    rules: {
-      required: {
-        value: true,
-        message: "Country is mendetory",
-      },
-    },
-    className: "col-span-4",
+    ],
   },
   {
     component: FormDatePicker,
@@ -146,6 +166,7 @@ const invoiceFormFields = [
         message: "Invoice Date is mendetory",
       },
     },
+    hideMessage: true,
     className: "col-span-6",
   },
   {
@@ -159,6 +180,7 @@ const invoiceFormFields = [
         message: "Payment Terms is mendetory",
       },
     },
+    hideMessage: true,
     options: [
       {
         value: "15days",
@@ -186,6 +208,7 @@ const invoiceFormFields = [
         message: "Project Description is mendetory",
       },
     },
+    hideMessage: true,
     className: "col-span-full",
   },
   {
@@ -229,10 +252,12 @@ const invoiceFormFields = [
             message: "Price is mendetory",
           },
         },
+
         className: "w-full",
       },
     ],
-    className:"col-span-full",
+    hideMessage: true,
+    className: "col-span-full",
   },
 ];
 
