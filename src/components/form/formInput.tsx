@@ -12,10 +12,10 @@ const FormInput = ({ control, name, rules, label, className, ...props }: Props) 
       name={name}
       rules={rules}
       render={({ field }) => (
-        <FormItem className={cn("*:not-first:mt-2", className)}>
+        <FormItem className={cn(className)}>
           <FormLabel>{label}</FormLabel>
           <FormControl>
-            <Input  {...field} {...props} />
+            <Input {...field} {...props} />
           </FormControl>
           <FormMessage />
         </FormItem>

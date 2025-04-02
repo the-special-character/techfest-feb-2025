@@ -7,11 +7,11 @@ import {
   FormMessage,
 } from "../ui/form";
 import { cn } from "@/lib/utils";
-import { Slider } from "../ui/slider";
+import { Textarea } from "../ui/textarea";
 
 type Props = {};
 
-const FormMultiSlider = ({
+const FormTextArea = ({
   control,
   name,
   rules,
@@ -28,18 +28,7 @@ const FormMultiSlider = ({
         <FormItem className={cn(className)}>
           <FormLabel>{label}</FormLabel>
           <FormControl>
-            <Slider
-              onBlur={field.onBlur}
-              onValueChange={(value) => {
-                const event = {
-                  target: {
-                    value,
-                  },
-                };
-                field.onChange(event);
-              }}
-              {...props}
-            />
+            <Textarea {...field} {...props} />
           </FormControl>
           <FormMessage />
         </FormItem>
@@ -48,4 +37,4 @@ const FormMultiSlider = ({
   );
 };
 
-export default FormMultiSlider;
+export default FormTextArea;
