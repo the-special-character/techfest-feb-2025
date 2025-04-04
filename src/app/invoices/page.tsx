@@ -82,7 +82,7 @@ const invoices = [
 const Invoices = () => {
   const form = useForm({
     defaultValues: invoiceFormFields.reduce(
-      (p, c) => ({ ...p, [c.name]: "" }),
+      (p, c) => ({ ...p, [c.name]: c.defaultValue }),
       {}
     ),
     mode: "all",

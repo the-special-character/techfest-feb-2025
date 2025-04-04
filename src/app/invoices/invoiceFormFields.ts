@@ -12,6 +12,14 @@ const invoiceFormFields = [
     legend: "Bill From",
     className: "grid-cols-12",
     hideMessage: true,
+    defaultValue: {
+      billFrom: {
+        streetAddress: "",
+        city: "",
+        postalCode: "",
+        country: "",
+      }
+    },
     fieldArray: [
       {
         component: FormInput,
@@ -74,6 +82,16 @@ const invoiceFormFields = [
     legend: "Bill To",
     className: "grid-cols-12",
     hideMessage: true,
+    defaultValue: {
+      billTo: {
+        clientName: "",
+        clientEmail: "",
+        streetAddress: "",
+        city: "",
+        postalCode: "",
+        country: "",
+      }
+    },
     fieldArray: [
       {
         component: FormInput,
@@ -158,6 +176,7 @@ const invoiceFormFields = [
   {
     component: FormDatePicker,
     name: "invoiceDate",
+    defaultValue: new Date(),
     label: "Invoice Date",
     placeholder: "Invoice Date",
     rules: {
@@ -172,6 +191,7 @@ const invoiceFormFields = [
   {
     component: FormSelect,
     name: "paymentTerms",
+    defaultValue: "",
     label: "Payment Terms",
     placeholder: "Select Payment Terms",
     rules: {
@@ -200,6 +220,7 @@ const invoiceFormFields = [
   {
     component: FormTextArea,
     name: "projectDescription",
+    defaultValue: "",
     label: "Project Description",
     placeholder: "Project Description",
     rules: {
@@ -214,6 +235,7 @@ const invoiceFormFields = [
   {
     component: FormFieldArray,
     name: "productItems",
+    defaultValue: [],
     fieldArray: [
       {
         component: FormInput,
