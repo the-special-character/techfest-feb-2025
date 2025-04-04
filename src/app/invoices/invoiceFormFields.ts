@@ -13,12 +13,10 @@ const invoiceFormFields = [
     className: "grid-cols-12",
     hideMessage: true,
     defaultValue: {
-      billFrom: {
-        streetAddress: "",
-        city: "",
-        postalCode: "",
-        country: "",
-      }
+      streetAddress: "",
+      city: "",
+      postalCode: "",
+      country: "",
     },
     fieldArray: [
       {
@@ -83,14 +81,12 @@ const invoiceFormFields = [
     className: "grid-cols-12",
     hideMessage: true,
     defaultValue: {
-      billTo: {
-        clientName: "",
-        clientEmail: "",
-        streetAddress: "",
-        city: "",
-        postalCode: "",
-        country: "",
-      }
+      clientName: "",
+      clientEmail: "",
+      streetAddress: "",
+      city: "",
+      postalCode: "",
+      country: "",
     },
     fieldArray: [
       {
@@ -203,15 +199,15 @@ const invoiceFormFields = [
     hideMessage: true,
     options: [
       {
-        value: "15days",
+        value: "15",
         text: "Next 15 Days",
       },
       {
-        value: "30days",
+        value: "30",
         text: "Next 30 Days",
       },
       {
-        value: "45days",
+        value: "45",
         text: "Next 45 Days",
       },
     ],

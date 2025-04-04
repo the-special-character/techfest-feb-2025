@@ -11,5 +11,72 @@
       "id": 2
     }
   ],
-  "invoices": []
+  "invoices": [
+    {
+      "billFrom": {
+        "streetAddress": "asdfsa",
+        "city": "asdfsad",
+        "postalCode": "adfsa",
+        "country": "asfasd"
+      },
+      "billTo": {
+        "clientName": "asdfas",
+        "clientEmail": "asdfadsf",
+        "streetAddress": "asdfsadf",
+        "city": "asdfasd",
+        "postalCode": "asdfasd",
+        "country": "asdfdas"
+      },
+      "invoiceDate": "2025-04-02T18:30:00.000Z",
+      "paymentTerms": "30",
+      "projectDescription": "asdfdsaf",
+      "productItems": [
+        {
+          "itemName": "asfsdafdsaf",
+          "quantity": "2",
+          "price": "300"
+        },
+        {
+          "itemName": "asdfasdfasdf",
+          "quantity": "2",
+          "price": "400"
+        }
+      ],
+      "status": "pending",
+      "id": 1
+    },
+    {
+      "billFrom": {
+        "streetAddress": "asdfadsfs",
+        "city": "asdfadsf",
+        "postalCode": "asdfs",
+        "country": "asdfas"
+      },
+      "billTo": {
+        "clientName": "asdfdasf",
+        "clientEmail": "asdfasdf",
+        "streetAddress": "sdfads",
+        "city": "asdfas",
+        "postalCode": "asdfas",
+        "country": "assdf"
+      },
+      "invoiceDate": "2025-03-31T18:30:00.000Z",
+      "paymentTerms": "45",
+      "projectDescription": "asdfadsfadsf",
+      "productItems": [
+        {
+          "itemName": "asdfdasf",
+          "quantity": "1",
+          "price": "20"
+        },
+        {
+          "itemName": "asdfasdf",
+          "quantity": "2",
+          "price": "40"
+        }
+      ],
+      "status": "pending",
+      "id": 2
+    }
+  ]
 }
